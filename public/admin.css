@@ -1,0 +1,288 @@
+/* === ROOT VARIABLES: THE ULTIMATE CYBERNETIC PALETTE === */
+:root {
+    --glow-accent: #00f7c0;
+    --secondary-accent: #00d4ff;
+    --bg-primary: #0a0f18;
+    --bg-surface: #101622;
+    --text-primary: #e6f1ff;
+    --text-secondary: #8493a6;
+    --border-color: rgba(67, 81, 102, 0.5);
+    --border-hover: var(--glow-accent);
+    --danger-color: #ff5566;
+    --shadow-soft: rgba(0, 247, 192, 0.08);
+}
+
+/* === ANIMATED CIRCUIT BACKGROUND & BODY STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    background-image:
+        linear-gradient(rgba(0, 247, 192, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 247, 192, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: bg-pan 60s linear infinite;
+}
+
+@keyframes bg-pan {
+    from { background-position: 0 0; }
+    to { background-position: -400px -400px; }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* === HEADER & INTRO ANIMATION === */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fade-in 1s ease-out;
+}
+.header h1 {
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--glow-accent), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === INTERACTIVE STATS CARDS === */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: var(--bg-surface);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fade-in-up 0.5s ease-out backwards;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 25px var(--shadow-soft);
+}
+.stat-number {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* === MAIN TEAMS SECTION === */
+.teams-section {
+    background: var(--bg-surface);
+    border-radius: 12px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: fade-in-up 0.5s ease-out 0.6s backwards;
+}
+.section-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* === POLISHED CONTROLS === */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: var(--bg-primary);
+    border-color: var(--border-hover);
+    color: var(--glow-accent);
+}
+.btn-primary {
+    background: var(--glow-accent);
+    color: var(--bg-primary);
+    border-color: var(--glow-accent);
+}
+.btn-primary:hover {
+    box-shadow: 0 0 15px var(--glow-accent);
+}
+
+.search-box {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #010409;
+    color: var(--text-primary);
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px rgba(0, 247, 192, 0.1);
+    transition: all 0.3s ease;
+}
+.search-box:focus {
+    outline: none;
+    border-color: var(--border-hover);
+    box-shadow: inset 0 0 8px rgba(0, 247, 192, 0.3), 0 0 10px rgba(0, 247, 192, 0.3);
+}
+
+/* === CLEAN TABLE WITH PERFECT SPACING === */
+.teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.teams-table th, .teams-table td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.teams-table th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+tbody tr:hover {
+    background: rgba(14, 119, 218, 0.1);
+    cursor: pointer;
+}
+.domain-badge {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--secondary-accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* === THE ULTIMATE ACTION BUTTONS WITH SPACING === */
+.actions-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Vertical spacing */
+}
+.modal .actions-cell {
+    flex-direction: row;
+    gap: 12px; /* Horizontal spacing in modal */
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--bg-surface);
+    transition: all 0.2s ease-out;
+}
+.modal .btn-action {
+    width: auto;
+    padding: 0 20px;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.btn-remove { color: var(--danger-color); }
+.btn-remove:hover { background-color: var(--danger-color); border-color: var(--danger-color); color: #fff; }
+.btn-delete-perm { color: var(--danger-color); }
+.btn-delete-perm:hover { background-color: var(--danger-color); border-color: var(--danger-color); color: #fff; }
+.btn-restore { color: #30a46c; }
+.btn-restore:hover { background-color: #30a46c; border-color: #30a46c; color: #fff; }
+
+/* === MODAL WITH AURORA EFFECT === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    background-image:
+        radial-gradient(circle at 100% 0%, rgba(0, 247, 192, 0.2) 0%, transparent 30%),
+        radial-gradient(circle at 0% 100%, rgba(0, 212, 255, 0.2) 0%, transparent 30%);
+    animation: fade-in 0.4s ease;
+}
+.modal-content {
+    background-color: var(--bg-surface);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    animation: zoom-in 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal-close-btn {
+    color: var(--text-secondary);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.modal-close-btn:hover {
+    color: var(--text-primary);
+}
+
+/* === ANIMATION KEYFRAMES === */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes zoom-in { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }

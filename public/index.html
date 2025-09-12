@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV-GENESIS 2025 - Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="three-canvas"></canvas>
+    
+    <!-- Custom Cursor Trail -->
+    <div id="cursor-trail"></div>
+    
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-page="0"></div>
+        <div class="nav-dot" data-page="1"></div>
+        <div class="nav-dot" data-page="2"></div>
+        <div class="nav-dot" data-page="3"></div>
+        <div class="nav-dot" data-page="4"></div>
+    </div>
+    
+    <!-- Page 1: Hero Section -->
+    <div id="page-1" class="page active">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="tech-text">DEV-GENESIS</span>
+                <span class="hackathon-text">KLECET</span>
+                <span class="year-text">2025</span>
+            </h1>
+            <p class="hero-subtitle">Join us for an innovative hackathon where technology meets creativity</p>
+            <p class="hero-description">Build solutions that shape the future in this 24-hour coding marathon</p>
+            
+            <div class="hero-details">
+                <div class="detail-item">📅 17-18 Nov 2025</div>
+                <div class="detail-item">⏱️ 24 hours</div>
+                <div class="detail-item">🏆 Exciting prizes</div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-text">Scroll to explore</div>
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2: Prizes -->
+    <div id="page-2" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="navigateToPage(0)">← Back to Home</button>
+            
+            <h2 class="page-title">Prizes & Recognition</h2>
+            
+            <div class="prizes-grid">
+                <div class="prize-card first-prize">
+                    <div class="card">
+                        <div class="prize-icon">🥇</div>
+                        <div class="prize-place">First Prize</div>
+                    </div>
+                    <div class="content">
+                        <h3>Winner</h3>
+                        <p>₹40,000</p>
+                    </div>
+                </div>
+                
+                <div class="prize-card second-prize">
+                    <div class="card">
+                        <div class="prize-icon">🥈</div>
+                        <div class="prize-place">Second Prize</div>
+                    </div>
+                    <div class="content">
+                        <h3>Runner Up</h3>
+                        <p>₹20,000</p>
+                    </div>
+                </div>
+                
+                <div class="prize-card third-prize">
+                    <div class="card">
+                        <div class="prize-icon">🥉</div>
+                        <div class="prize-place">Third Prize</div>
+                    </div>
+                    <div class="content">
+                        <h3>Third Place</h3>
+                        <p>₹10,000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certificate-info">
+                <div class="certificate-icon">🏅</div>
+                <h3>Additional Benefits</h3> <br>
+                <p>Participation Certificate for all participants.</p> <br>
+                <p>Exciting Godie Kits.</p>
+            </div>
+            
+            <button class="btn explore-domains-btn" onclick="navigateToPage(2)">
+                Explore Domains
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Page 3: Domains -->
+    <div id="page-3" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="navigateToPage(1)">← Back to Prizes</button>
+            
+            <h2 class="page-title">Choose Your Domain</h2>
+            
+            <div class="domains-grid">
+                <div class="domain-card" data-domain="aiml">
+                    <div class="domain-icon">🤖</div>
+                    <div class="domain-name">AI/ML</div>
+                    <div class="domain-subtitle">Artificial Intelligence & Machine Learning</div>
+                </div>
+                
+                <div class="domain-card" data-domain="iot">
+                    <div class="domain-icon">🌐</div>
+                    <div class="domain-name">IoT</div>
+                    <div class="domain-subtitle">Internet of Things & Hardware</div>
+                </div>
+                
+                <div class="domain-card" data-domain="blockchain">
+                    <div class="domain-icon">⛓️</div>
+                    <div class="domain-name">Blockchain</div>
+                    <div class="domain-subtitle">Blockchain & Web3</div>
+                </div>
+                
+                <div class="domain-card" data-domain="cybersecurity">
+                    <div class="domain-icon">🔒</div>
+                    <div class="domain-name">Security</div>
+                    <div class="domain-subtitle">Cybersecurity</div>
+                </div>
+                
+                <div class="domain-card" data-domain="cloud">
+                    <div class="domain-icon">☁️</div>
+                    <div class="domain-name">Cloud Computing</div>
+                    <div class="domain-subtitle">Cloud & DevOps</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 4: Problems -->
+    <div id="page-4" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="navigateToPage(2)">← Back to Domains</button>
+            
+            <h2 class="page-title">
+                Problem Statements - <span id="selected-domain-title">AI/ML</span>
+            </h2>
+            
+            <div id="problems-container" class="problems-grid">
+                <!-- Problems will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 5: Registration Form -->
+    <div id="page-5" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="navigateToPage(3)">← Back to Problems</button>
+            
+            <h2 class="page-title">Team Registration</h2>
+            
+            <div class="selection-summary">
+                <div class="selected-info">
+                    <strong>Domain:</strong> <span id="final-domain">AI/ML</span>
+                </div>
+                <div class="selected-info">
+                    <strong>Problem:</strong> <span id="final-problem">Fake News Detection</span>
+                </div>
+            </div>
+            
+            <form id="registration-form" class="registration-form">
+                <div class="form-section">
+                    <h3>Team Information</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="team-name">Team Name *</label>
+                        <!-- NAME ATTRIBUTE ADDED/CORRECTED -->
+                        <input type="text" id="team-name" name="team_name" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Team Leader</h3>
+                    <div class="member-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="leader-name">Name *</label>
+                            <!-- NAME ATTRIBUTE ADDED -->
+                            <input type="text" id="leader-name" name="leader_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="leader-contact">Contact Number *</label>
+                            <!-- NAME ATTRIBUTE ADDED/CORRECTED -->
+                            <input type="tel" id="leader-contact" name="contact_phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="leader-email">Email Address *</label>
+                            <!-- NAME ATTRIBUTE ADDED/CORRECTED -->
+                            <input type="email" id="leader-email" name="contact_email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="leader-college">College Name *</label>
+                            <!-- NAME ATTRIBUTE ADDED/CORRECTED -->
+                            <input type="text" id="leader-college" name="institution" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="leader-usn">USN *</label>
+                            <!-- NAME ATTRIBUTE ADDED -->
+                            <input type="text" id="leader-usn" name="leader_usn" placeholder="e.g., 2KD23CS042" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Team Members</h3>
+                    <div id="team-members">
+                        <!-- Team members will be added dynamically -->
+                    </div>
+                    <button type="button" class="btn btn--secondary add-member-btn">
+                        Add Team Member
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="project-description">Project Description</label>
+                        <!-- NAME ATTRIBUTE CORRECTED -->
+                        <textarea id="project-description" name="project_description" class="form-control" 
+                                  placeholder="Brief description of your project idea..."></textarea>
+                    </div>
+                     <div class="form-group">
+                        <label class="form-label" for="tech-stack">Expected Tech Stack</label>
+                        <!-- NAME ATTRIBUTE ADDED -->
+                        <input type="text" id="tech-stack" name="tech_stack" class="form-control" 
+                               placeholder="e.g., React, Node.js, Python, TensorFlow...">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">
+                    Submit
+                    <span></span>
+                    <span></span>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Loading Screen -->
+    <div id="loading" class="loading hidden">
+        <div class="loader">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="loading-text">Processing your registration...</div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="success-animation">🎉</div>
+            <h3>Registration Successful!</h3>
+            <p>Thank you for registering for DEV-GENESIS 2025. We'll send you further details via email.</p>
+            <button class="btn" onclick="closeModal()">
+                Close
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

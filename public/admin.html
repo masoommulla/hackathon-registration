@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - DEV-GENESIS 2025</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Admin Dashboard</h1>
+            <p>DEV-GENESIS 2025 Registration Management</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card"><span class="stat-number" id="totalTeams">-</span><div class="stat-label">Total Teams</div></div>
+            <div class="stat-card"><span class="stat-number" id="totalParticipants">-</span><div class="stat-label">Total Participants</div></div>
+            <div class="stat-card"><span class="stat-number" id="totalDomains">-</span><div class="stat-label">Active Domains</div></div>
+            <div class="stat-card"><span class="stat-number" id="avgTeamSize">-</span><div class="stat-label">Avg Team Size</div></div>
+        </div>
+
+        <div class="teams-section">
+            <h2 class="section-title">Registered Teams.</h2>
+            <div class="controls">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search teams by name, domain, or email...">
+                <button class="btn btn-primary" onclick="refreshData()">Refresh Data</button>
+                <button class="btn btn-secondary" onclick="exportData()">Export CSV</button>
+                <button id="recycleBinBtn" title="Recycle Bin" class="btn btn-secondary" style="font-size: 1.2rem; padding: 10px 15px;">♻️</button>
+            </div>
+            <div id="messageArea"></div>
+            <div id="loadingArea" class="loading" style="display: none;">Loading teams data...</div>
+            <div id="teamsTableContainer">
+                <table class="teams-table" id="teamsTable">
+                    <thead><tr><th>Team Name</th><th>Domain</th><th>Members</th><th>Contact</th><th>Institution</th><th>Registered</th><th>Actions</th></tr></thead>
+                    <tbody id="teamsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="recycleBinModal" class="modal">
+        <div class="modal-content">
+            <span id="modalCloseBtn" class="modal-close-btn">&times;</span>
+            <h2 class="section-title">Recycle Bin</h2>
+            <input type="text" id="recycleBinSearchInput" class="search-box" placeholder="Search deleted teams..." style="margin-bottom: 20px; width: 100%;">
+            <div><table class="teams-table"><thead><tr><th>Team Name</th><th>Contact</th><th>Actions</th></tr></thead><tbody id="deletedTeamsTableBody"></tbody></table></div>
+        </div>
+    </div>
+
+    <div id="teamDetailsModal" class="modal">
+        <div class="modal-content">
+            <span id="detailsModalCloseBtn" class="modal-close-btn">&times;</span>
+            <h2 class="section-title">Team Member Details</h2>
+            <div id="teamDetailsContent"></div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
