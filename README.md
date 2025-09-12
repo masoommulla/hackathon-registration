@@ -63,7 +63,7 @@ Follow these instructions to set up and run the project on your local machine fo
 Open your terminal and run these commands one by one:
 
 1. Clone the repository (replace with your actual URL)
-git clone https://github.com/your-username/your-repo-name.git
+https://github.com/masoommulla/hackathon-registration.git
 
 2. Navigate into the project directory
 cd your-repo-name
