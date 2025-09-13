@@ -6,9 +6,23 @@ A comprehensive, full-stack application designed to manage registrations for the
 
 <br>
 
-![Alt text](admin-panel1.png)
+![Alt text](Registration1.png)
+<img src="images/Registration1.png" alt="Alt text" width="300">
 
-![Alt text](admin-panel2.png)
+![Alt text](Registration2.png)
+<img src="images/Registration2.png" alt="Alt text" width="300">
+
+![Alt text](Registration3.png)
+<img src="images/Registration3.png" alt="Alt text" width="300">
+
+![Alt text](Registration4.png)
+<img src="images/Registration4.png" alt="Alt text" width="300">
+
+![Alt text](images/admin-panel1.png)
+<img src="images/admin-panel1.png" alt="Alt text" width="300">
+
+![Alt text](images/admin-panel2.png)
+<img src="images/admin-panel2.png" alt="Alt text" width="300">
 
 ---
 
