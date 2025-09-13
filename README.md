@@ -6,7 +6,8 @@ A comprehensive, full-stack application designed to manage registrations for the
 
 <br>
 
-*Replace this line with a screenshot of your admin dashboard!*
+![Alt text](admin-panel1.png)
+![Alt text](adminj-panel2.png)
 
 ---
 
@@ -66,7 +67,7 @@ Open your terminal and run these commands one by one:
 https://github.com/masoommulla/hackathon-registration.git
 
 2. Navigate into the project directory
-cd your-repo-name
+cd hackathon-registration
 
 3. Install all the required Node.js packages
 npm install
@@ -104,7 +105,8 @@ A brief overview of the key files and directories in this project.
 │ ├── app.js # Logic and data for the registration portal
 │ └── style.css # Styling for the registration portal
 ├── .env # Secure environment variables (private)
-├── init-database.js # Script to set up and seed the database
+├── scripts
+| └──init-database.js # Script to set up and seed the database
 ├── package.json # Project metadata and dependencies
 ├── server.js # The main Express.js backend server
 └── README.md # This file!
