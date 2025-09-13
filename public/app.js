@@ -1,17 +1,17 @@
-// Hackathon Registration App JavaScript
+//DEV-GENESIS Hackathon Registration App JavaScript
 
 // Application Data
 const hackathonData = {
     hackathon: {
-        name: "TECH HACKATHON 2025",
+        name: "DEV-GENESIS HACKATHON APP",
         description: "Join us for an innovative hackathon where technology meets creativity. Build solutions that shape the future.",
-        date: "October 2025",
-        duration: "48 hours"
+        date: "dd/mm/yy",
+        duration: "24 hours"
     },
     prizes: {
-        first: "₹40,000",
-        second: "₹20,000", 
-        third: "₹10,000",
+        first: "₹x,xx,xxx",
+        second: "₹xx,xxx", 
+        third: "₹xx,xxx",
         certificate: "Participation Certificate for all participants"
     },
     domains: [
@@ -291,16 +291,16 @@ async function handleFormSubmission(e) {
         const form = document.getElementById('registration-form');
         const formData = new FormData(form);
 
-        // Leader ko pehla member banakar members array taiyaar karein
+        
         const teamMembers = [{
             name: formData.get('leader_name') || '',
-            email: formData.get('contact_email') || '', // Leader ka email, contact_email hai
+            email: formData.get('contact_email') || '', 
             phone: formData.get('contact_phone') || '',
             role: 'Team Leader',
-            skills: formData.get('leader_usn') || '' // USN ko skills mein bhej rahe hain
+            skills: formData.get('leader_usn') || '' 
         }];
 
-        // Baaki members ko collect karein
+        
         for (let i = 1; i <= teamMemberCount; i++) {
             const name = formData.get(`member_${i}_name`);
             const email = formData.get(`member_${i}_email`);
@@ -310,12 +310,12 @@ async function handleFormSubmission(e) {
                     email: email,
                     phone: formData.get(`member_${i}_phone`) || '',
                     role: 'Member',
-                    skills: formData.get(`member_${i}_usn`) || '' // USN ko skills mein bhej rahe hain
+                    skills: formData.get(`member_${i}_usn`) || '' 
                 });
             }
         }
         
-        // Server ko bhejne wala data
+
         const data = {
             teamName: formData.get('team_name'),
             selectedDomain: selectedDomain ? selectedDomain.name : 'Not Selected',
