@@ -1,7 +1,7 @@
 {
   "name": "hackathon-registration-backend",
   "version": "1.0.0",
-  "description": "Backend for Tech Hackathon 2025 Registration System",
+  "description": "Backend for DEV-GENESIS Hackathon Registration System",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -24,6 +24,6 @@
     "mysql",
     "express"
   ],
-  "author": "Your Name",
+  "author": "Masoom M Mulla",
   "license": "MIT"
 }
