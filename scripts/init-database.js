@@ -4,10 +4,10 @@ require('dotenv').config();
 async function initializeDatabase() {
     console.log("DEBUG: Password being used is:", process.env.DB_PASSWORD);
     
-    let connection; // Connection variable ko bahar define karein
+    let connection; 
 
     try {
-        // Step 1: Bina database ke connect karein
+        
         connection = await mysql.createConnection({
             host: process.env.DB_HOST || 'localhost',
             user: process.env.DB_USER || 'root',
@@ -17,25 +17,23 @@ async function initializeDatabase() {
 
         console.log('🔄 Initializing database...');
 
-        // Step 2: Database banayein (agar nahi hai toh)
-        // Backticks (`) ka istemal karein taaki database name mein special character ho to bhi chale
+        
         await connection.execute(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME || 'hackathon_db'}\``);
         console.log('✅ Database created/verified');
 
-        // Puraana connection band kar dein
+        
         await connection.end();
 
-        // Step 3: Ab seedha uss database se connect karein
+        
         connection = await mysql.createConnection({
             host: process.env.DB_HOST || 'localhost',
             user: process.env.DB_USER || 'root',
             password: process.env.DB_PASSWORD || '',
             port: process.env.DB_PORT || 3306,
-            database: process.env.DB_NAME || 'hackathon_db' // <--- Yahan database ka naam diya hai
+            database: process.env.DB_NAME || 'hackathon_db' 
         });
 
-        // Ab 'USE' command ki zaroorat nahi hai.
-
+        
         // Create teams table
         await connection.execute(`
             CREATE TABLE IF NOT EXISTS teams (
@@ -76,7 +74,7 @@ async function initializeDatabase() {
 
         console.log('✅ Tables created successfully!');
 
-        // Baaki ka code bilkul same rahega...
+        
         const [existingTeams] = await connection.execute('SELECT COUNT(*) as count FROM teams');
         if (existingTeams[0].count === 0) {
             console.log('🔄 Adding sample data...');
@@ -127,3 +125,4 @@ if (require.main === module) {
 }
 
 module.exports = initializeDatabase;
+
