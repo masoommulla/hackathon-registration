@@ -7,7 +7,8 @@ A comprehensive, full-stack application designed to manage registrations for the
 <br>
 
 ![Alt text](admin-panel1.png)
-![Alt text](adminj-panel2.png)
+
+![Alt text](admin-panel2.png)
 
 ---
 
