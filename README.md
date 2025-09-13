@@ -5,24 +5,34 @@
 A comprehensive, full-stack application designed to manage registrations for the **DEV-GENESIS 2025 Hackathon**. This project features a sleek, animated public-facing website for participants and a powerful, secure admin dashboard for organizers to manage the event seamlessly.
 
 <br>
+<span>
+![Alt text](imagesRegistration1.png)
+<img src="images/Registration1.png"  width="500">
+</span>
+<span>
+![Alt text](images/Registration2.png)
+<img src="images/Registration2.png"  width="500">
+</span>
 
-![Alt text](Registration1.png)
-<img src="images/Registration1.png" alt="Alt text" width="300">
+<span>
+![Alt text](images/Registration3.png)
+<img src="images/Registration3.png"  width="500">
+</span>
 
-![Alt text](Registration2.png)
-<img src="images/Registration2.png" alt="Alt text" width="300">
+<span>
+![Alt text](images/Registration4.png)
+<img src="images/Registration4.png"  width="500">
+</span>
 
-![Alt text](Registration3.png)
-<img src="images/Registration3.png" alt="Alt text" width="300">
-
-![Alt text](Registration4.png)
-<img src="images/Registration4.png" alt="Alt text" width="300">
-
+<span>
 ![Alt text](images/admin-panel1.png)
-<img src="images/admin-panel1.png" alt="Alt text" width="300">
+<img src="images/admin-panel1.png"  width="500">
+</span>
 
+<span>
 ![Alt text](images/admin-panel2.png)
-<img src="images/admin-panel2.png" alt="Alt text" width="300">
+<img src="images/admin-panel2.png"  width="500">
+</span>
 
 ---
 
