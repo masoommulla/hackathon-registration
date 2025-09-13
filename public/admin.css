@@ -42,7 +42,7 @@ body {
     padding: 20px;
 }
 
-/* === HEADER & INTRO ANIMATION === */
+
 .header {
     text-align: center;
     margin-bottom: 50px;
@@ -57,7 +57,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* === INTERACTIVE STATS CARDS === */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -98,7 +98,7 @@ body {
     font-weight: 500;
 }
 
-/* === MAIN TEAMS SECTION === */
+
 .teams-section {
     background: var(--bg-surface);
     border-radius: 12px;
@@ -114,7 +114,7 @@ body {
     font-weight: 600;
 }
 
-/* === POLISHED CONTROLS === */
+
 .controls {
     display: flex;
     gap: 15px;
@@ -166,7 +166,7 @@ body {
     box-shadow: inset 0 0 8px rgba(0, 247, 192, 0.3), 0 0 10px rgba(0, 247, 192, 0.3);
 }
 
-/* === CLEAN TABLE WITH PERFECT SPACING === */
+
 .teams-table {
     width: 100%;
     border-collapse: collapse;
@@ -199,15 +199,15 @@ tbody tr:hover {
     font-weight: 600;
 }
 
-/* === THE ULTIMATE ACTION BUTTONS WITH SPACING === */
+
 .actions-cell {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Vertical spacing */
+    gap: 8px; 
 }
 .modal .actions-cell {
     flex-direction: row;
-    gap: 12px; /* Horizontal spacing in modal */
+    gap: 12px; 
 }
 
 .btn-action {
@@ -239,7 +239,7 @@ tbody tr:hover {
 .btn-restore { color: #30a46c; }
 .btn-restore:hover { background-color: #30a46c; border-color: #30a46c; color: #fff; }
 
-/* === MODAL WITH AURORA EFFECT === */
+
 .modal {
     display: none;
     position: fixed;
@@ -286,3 +286,4 @@ tbody tr:hover {
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes zoom-in { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
